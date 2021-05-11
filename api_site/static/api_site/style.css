@@ -1,0 +1,38 @@
+body {
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    background-position: inherit;
+    font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+.wrapper {
+    background-color:cornsilk;
+    width: 500px;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+    padding: 15px 50px 25px;
+}
+
+.question {
+    background-color: grey;
+    margin: auto;
+    margin-top: 20px;
+    padding: 15px 50px 15px;
+    width: auto;
+    height: auto;
+    border-style: double;
+    font-size: 22px;
+    border-color: black;
+}
+
+.answer {
+    background-color: khaki;
+    margin: auto;
+    margin-top: 15px;
+    padding: 15px 50px 15px;
+    font-size: 20px;
+    font-stretch: wider;
+    width: 500px;
+}

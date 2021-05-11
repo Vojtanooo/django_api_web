@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +7,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static "api_site/style.css" %}" rel="stylesheet">
     <title>Home</title>
 </head>
 
 <body>
-    {{ context }}
+    <div class="wrapper">
+        <div class="question">
+            {{ questions }}
+        </div>
+        {% for item in answers %}
+            <button class="answer">{{ item }}</button>
+        {% endfor %}
+    </div>
 </body>
 
 </html>
