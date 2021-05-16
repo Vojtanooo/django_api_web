@@ -1,4 +1,5 @@
 {% load static %}
+{% load extra_filters %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,14 +13,21 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="question">
-            {{ questions }}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="wrapper">
+            <div class="name">{{ username }}</div>
+            {% if score %}
+            <div class="score">Score: {{ score }}</div>
+            {% endif %}
+                <div class="question">
+                    {{ context|question }}
+                </div>
+                {% for item in context|answers %}
+                    <button value="{{ item }}" type="submit" class="answer" name="button">{{ item }}</button>
+                {% endfor %}
         </div>
-        {% for item in answers %}
-            <button class="answer">{{ item }}</button>
-        {% endfor %}
-    </div>
+    </form>
 </body>
 
 </html>
