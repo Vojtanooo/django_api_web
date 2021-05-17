@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render
-from .get_api import get_question
+from .get_api import get_question, api
 
 
-def home(request):
+def quiz(request):
     context = {
         "context": get_question(0)[0],
         "username": request.session.get("username"),
@@ -11,7 +11,7 @@ def home(request):
 
     if request.session["num"] == 9:
         request.session.clear()
-        return redirect("success")  # doplnit stranku se skore a časem
+        return redirect("starting-page")  # doplnit stranku se skore a časem
 
     if request.method == "POST":
         num = request.session.get("num") + 1
@@ -24,14 +24,16 @@ def home(request):
         else:
             context.update({"context": get_question(num)[0]})
 
-    return render(request, "home.html", context)
+    return render(request, "quiz.html", context)
 
 
-def success(request):
+def starting_page(request):
     context = {}
     if "submit" in request.POST:
+        api(request.POST.get("category"), request.POST.get("difficulty"))
+
         request.session["username"] = request.POST.get("username")
         request.session["score"] = 0
         request.session["num"] = 0
-        return redirect("home")
-    return render(request, "success.html", context)
+        return redirect("quiz")
+    return render(request, "starting_page.html", context)
