@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static "api_site/style.css" %}" rel="stylesheet">
+    <title>Finish</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="question">
+            <h2>Your score {{ username }}:</h2>
+        </div>
+        <div class="finish_answer">
+            Score -{{ score }}-
+        </div>
+    </div>
+</body>
+</html>

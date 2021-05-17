@@ -10,8 +10,7 @@ def quiz(request):
     }
 
     if request.session["num"] == 9:
-        request.session.clear()
-        return redirect("starting-page")  # doplnit stranku se skore a časem
+        return redirect("finish-page")  # doplnit stranku se skore a časem
 
     if request.method == "POST":
         num = request.session.get("num") + 1
@@ -37,3 +36,11 @@ def starting_page(request):
         request.session["num"] = 0
         return redirect("quiz")
     return render(request, "starting_page.html", context)
+
+
+def finish_page(request):
+    username = request.session.get("username")
+    score = request.session.get("score")
+    request.session.clear()
+
+    return render(request, "finish_page.html", {"username": username, "score": score})

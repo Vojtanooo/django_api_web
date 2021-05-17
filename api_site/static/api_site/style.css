@@ -47,6 +47,7 @@ body {
     border-style: double;
     font-size: 22px;
     border-color: black;
+    text-align: center;
 }
 
 .answer {
@@ -57,4 +58,16 @@ body {
     font-size: 20px;
     text-align: center;
     width: 500px;
+}
+
+.finish_answer {
+    background-color: khaki;
+    margin: auto;
+    margin-top: 15px;
+    padding: 15px 50px 15px;
+    font-size: 20px;
+    text-align: center;
+    width: auto;
+    height: auto;
+    border: 2px solid black;
 }
