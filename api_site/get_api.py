@@ -3,9 +3,9 @@ import requests
 import json
 
 
-def api():
+def api(category, difficulty):
     api = requests.get(
-        "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium").json()["results"]
+        f"https://opentdb.com/api.php?amount=10&category={category}&difficulty={difficulty}").json()["results"]
     with open("request_api.json", "w") as json_file:
         json.dump(api, json_file)
 
