@@ -62,7 +62,10 @@
                 	</select>
                 <h2>Insert Name:</h2>
                 <input type="text" name="username">
-                <button type="submit" name="submit">Submit</button>
+                <button type="submit" name="submit">Submit</button><br>
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
             </div>
         </div>
     </form>
