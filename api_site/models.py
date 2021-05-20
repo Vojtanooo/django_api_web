@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class Leaderboard(models.Model):
+
+    username = models.CharField(max_length=50, primary_key=True,)
+    score = models.IntegerField()
