@@ -21,10 +21,10 @@
             <div class="score">Score: {{ score }}</div>
             {% endif %}
                 <div class="question">
-                    {{ context|question }}
+                    {{ context|question|safe }}
                 </div>
                 {% for item in context|answers %}
-                    <button value="{{ item }}" type="submit" class="answer" name="button">{{ item }}</button>
+                    <button value="{{ item }}" type="submit" class="answer" name="button">{{ item|safe }}</button>
                 {% endfor %}
         </div>
     </form>
