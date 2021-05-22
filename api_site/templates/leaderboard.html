@@ -18,6 +18,10 @@
         <div class="name">{{ item|dict_item }}</div>
         <div class="score">{{ item|dict_value }}</div><br><br>
         {% endfor %}
+            <div class="question">
+                <a href="{% url "starting-page" %}">Starting page</a>
+            </div>
     </div>
+    
 </body>
 </html>
