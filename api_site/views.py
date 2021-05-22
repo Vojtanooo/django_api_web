@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from .get_api import get_question, api
 from .models import Leaderboard
 from django.contrib import messages
+from .get_leaderboard import get_leaderboard
 
 
 def quiz(request):
@@ -51,3 +52,9 @@ def finish_page(request):
     request.session.clear()
 
     return render(request, "finish_page.html", {"username": username, "score": score})
+
+
+def leaderboard(request):
+    username_score = get_leaderboard()
+
+    return render(request, "leaderboard.html", {"username_score": username_score})
