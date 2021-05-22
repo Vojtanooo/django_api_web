@@ -1,0 +1,23 @@
+{% load static %}
+{% load extra_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static "api_site/style.css" %}" rel="stylesheet">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="question">TOP 10 Leaderboard</div><br>
+        <div class="name">NAME</div>
+        <div class="score">SCORE</div><br><br>
+        {% for item in username_score %}
+        <div class="name">{{ item|dict_item }}</div>
+        <div class="score">{{ item|dict_value }}</div><br><br>
+        {% endfor %}
+    </div>
+</body>
+</html>
