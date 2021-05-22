@@ -19,3 +19,15 @@ def answers(value):
     lst = answers
     lst.insert(randint(0, 3), correct)
     return lst
+
+
+@register.filter
+def dict_item(value):
+    context = value
+    return context[0]
+
+
+@register.filter
+def dict_value(value):
+    context = value
+    return context[1]
